@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_login_animation/screens/home_screen.dart';
+import 'package:ui_login_animation/screens/modelscreen/logo_app.dart';
 
 void main() => runApp(Main());
 
@@ -9,7 +10,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'UI Login Animation',
-      home: HomeScreen(),
+      home: LogoApp(),
       debugShowCheckedModeBanner: false,
     );
   }
