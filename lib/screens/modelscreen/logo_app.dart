@@ -18,9 +18,16 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
     animation = Tween<double>(begin: 0, end: 300).animate(controller);
 
-    //sempre que tiver alguma alteração o listener sempre será chamado
-    animation.addListener(() {
-      setState(() {});
+    //verificar quando uma animation iniciou ou não
+    animation.addStatusListener((status) {
+      //se o status da animation estar completa
+      if (status == AnimationStatus.completed) {
+        controller.reverse();
+      }
+      //caso  não tenha terminado e chegar no zero
+      else if (status == AnimationStatus.dismissed) {
+        controller.forward();
+      }
     });
 
     //animar para frente com forward
@@ -35,13 +42,21 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-          child: Container(
-        height: animation.value,
-        width: animation.value,
-        child: FlutterLogo(),
-      )),
-    );
+    return Scaffold(body: AnimatedLogo(animation));
+  }
+}
+
+class AnimatedLogo extends AnimatedWidget {
+  AnimatedLogo(Animation<double> animation) : super(listenable: animation);
+
+  @override
+  Widget build(BuildContext context) {
+    final Animation<double> animation = listenable;
+    return Center(
+        child: Container(
+      height: animation.value,
+      width: animation.value,
+      child: FlutterLogo(),
+    ));
   }
 }
