@@ -30,7 +30,10 @@ class InputField extends StatelessWidget {
             ),
             border: InputBorder.none,
             hintText: hint,
-            hintStyle: TextStyle(color: Colors.white, fontSize: 15.0),
+            hintStyle: TextStyle(
+                color: Colors.white,
+                fontSize: 15.0,
+                fontWeight: FontWeight.bold),
             contentPadding:
                 EdgeInsets.only(top: 30, bottom: 30, right: 30, left: 5)),
       ),

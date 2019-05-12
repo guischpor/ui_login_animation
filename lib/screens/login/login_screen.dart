@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen>
         body: Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('images/background1.jpg'), fit: BoxFit.cover),
+            image: AssetImage('images/background2.jpg'), fit: BoxFit.cover),
       ),
       child: ListView(
         padding: EdgeInsets.zero,
@@ -48,16 +48,14 @@ class _LoginScreenState extends State<LoginScreen>
                       top: 70.0,
                       bottom: 32.0,
                     ),
-                    child: Image.asset('images/tick_icon_blue.png',
+                    child: Image.asset('images/tick_icon_purple.png',
                         width: 150, height: 150, fit: BoxFit.contain),
                   ),
                   FormContainer(),
                   SignUpButton()
                 ],
               ),
-              StaggerAnimation(
-                controller: _animationController.view
-              )
+              StaggerAnimation(controller: _animationController.view)
             ],
           ),
         ],
