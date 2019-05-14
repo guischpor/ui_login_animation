@@ -5,7 +5,11 @@ class StaggerAnimation extends StatelessWidget {
 
   final AnimationController controller;
 
-  StaggerAnimation({this.controller});
+  StaggerAnimation({this.controller})
+      : buttonSqueeze = Tween(begin: 320.0, end: 60.0).animate(
+            CurvedAnimation(parent: controller, curve: Interval(0.0, 0.150)));
+
+  final Animation<double> buttonSqueeze;
 
   @override
   Widget build(BuildContext context) {
