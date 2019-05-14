@@ -23,27 +23,40 @@ class StaggerAnimation extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 50),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          controller.forward();
+        },
         child: Container(
-          width: 320,
-          height: 60,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: Color.fromRGBO(161, 27, 147, 1.0),
-            borderRadius: BorderRadius.all(
-              Radius.circular(30.0),
+            width: buttonSqueeze.value,
+            height: 60,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(161, 27, 147, 1.0),
+              borderRadius: BorderRadius.all(
+                Radius.circular(30.0),
+              ),
             ),
-          ),
-          child: Text(
-            'Sign In',
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w300,
-                letterSpacing: 0.3),
-          ),
-        ),
+            child: _buildInside(context)),
       ),
     );
+  }
+
+  //funcao que add o circular progress indicator no botão enquanto carrega as informações
+  Widget _buildInside(BuildContext context) {
+    if (buttonSqueeze.value > 75) {
+      return Text(
+        'Sign In',
+        style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.w300,
+            letterSpacing: 0.3),
+      );
+    } else {
+      return CircularProgressIndicator(
+        valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+        strokeWidth: 2.0,
+      );
+    }
   }
 }
