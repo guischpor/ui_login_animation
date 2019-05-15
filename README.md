@@ -1,16 +1,18 @@
-# ui_login_animation
-
-A new Flutter project.
+# App Animation Login
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Esse projeto foi construído em Flutter.
 
-A few resources to get you started if this is your first Flutter project:
+- [Download da apk - App Flutter Youtube]()
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Inspiração
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+![Alt Text](https://startflutter.com/wp-content/uploads/2018/03/Login_Animation.gif)
+
+- [Link do Autor](https://startflutter.com/themes/flutter-login-animation-app/)
+
+### Imagens do App Animation Login
+
+![Alt Text](https://firebasestorage.googleapis.com/v0/b/projetoflutter-d9c64.appspot.com/o/App%20Animation%20Login.jpg?alt=media&token=ce9f762d-81de-4dc2-bf85-951a6274eaa6)
+
