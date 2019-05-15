@@ -18,4 +18,4 @@ Esse projeto foi construído em Flutter.
 
 ### Gif do App Animation Login
 
-![Alt Text](http://i.picasion.com/resize89/1ddd828c07a4dba67d778b0a6bf60867.gif)
+![Alt Text](https://firebasestorage.googleapis.com/v0/b/projetoflutter-d9c64.appspot.com/o/gif_animation_flutter.gif?alt=media&token=39ec82a2-69ee-48f2-9962-592ec1be19b4)
