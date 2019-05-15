@@ -7,17 +7,27 @@ class StaggerAnimation extends StatelessWidget {
 
   StaggerAnimation({this.controller})
       : buttonSqueeze = Tween(begin: 320.0, end: 60.0).animate(
-            CurvedAnimation(parent: controller, curve: Interval(0.0, 0.150))),
+          CurvedAnimation(
+            parent: controller,
+            curve: Interval(
+              0.0,
+              0.150,
+            ),
+          ),
+        ),
         buttonZoomOut = Tween(
           begin: 60.0,
           end: 1000.0,
-        ).animate(CurvedAnimation(
+        ).animate(
+          CurvedAnimation(
             parent: controller,
             curve: Interval(
               0.5,
               1,
               curve: Curves.bounceOut,
-            )));
+            ),
+          ),
+        );
 
   final Animation<double> buttonSqueeze;
   final Animation<double> buttonZoomOut;
@@ -34,9 +44,11 @@ class StaggerAnimation extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 50),
       child: InkWell(
-          onTap: () {
-            controller.forward();
-          },
+        onTap: () {
+          controller.forward();
+        },
+        child: Hero(
+          tag: 'fade',
           child: buttonZoomOut.value <= 60
               ? Container(
                   width: buttonSqueeze.value,
@@ -54,11 +66,14 @@ class StaggerAnimation extends StatelessWidget {
                   width: buttonZoomOut.value,
                   height: buttonZoomOut.value,
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(161, 27, 147, 1.0),
-                      shape: buttonZoomOut.value < 500
-                          ? BoxShape.circle
-                          : BoxShape.rectangle),
-                )),
+                    color: Color.fromRGBO(161, 27, 147, 1.0),
+                    shape: buttonZoomOut.value < 500
+                        ? BoxShape.circle
+                        : BoxShape.rectangle,
+                  ),
+                ),
+        ),
+      ),
     );
   }
 

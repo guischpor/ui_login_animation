@@ -11,7 +11,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'UI Login Animation',
-      home: HomeScreen(),
+      home: LoginScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
